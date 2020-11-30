@@ -2,6 +2,10 @@
     html {
         font-size: 64.22%;
         scroll-behavior: smooth;
+        font-family:'Poppins',sans-serif;
+    }
+    body{
+        background-color: #4bcfff8c;
     }
 
     main {
@@ -9,7 +13,7 @@
         padding: 1rem;
         margin: 0 auto;
         text-align: center;
-
+        
     }
 
     main>h1 {
@@ -23,23 +27,44 @@
 
     .picker {
         border-radius: 100%;
-        width: 10rem;
+        width: 12rem;
         padding: 1rem;
         position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%);
         cursor: pointer;
+        box-shadow: 3px 2px 3px #4bcfff8c;
+    }
+    .picker--outer:active::after {
+        transform: scale(2);
+        background-color: #4bcfff8c;
+        opacity: 0;
     }
 
+    .picker--outer::after {
+        box-shadow: 1px 2px 3px #4bcfff8c;
+        background-color: #fff;
+        transition: all 0.5s ease-in-out;
+        position: absolute;
+        content: " ";
+        width: 100%;
+        display: block;
+        height: 100%;
+        border-radius: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        
+    }
     .picker--outer {
         padding: 1rem 2.5rem;
         border-radius: 100%;
-        width: 5rem;
+        width: 6.5rem;
         margin: 0 auto;
-        background: #fff;
         transition: all 0.5s;
         box-shadow: 3px 2px 2px #4bcfff60;
+        position: relative;
     }
 
     .picker:hover {
@@ -56,7 +81,10 @@
         display: inline-block;
         letter-spacing: .2rem;
     }
-
+    .picker--inner h2::selection{
+        background-color: #4bcfff8c;
+        color: #fff;
+    }
     .display ul {
         padding: 0;
         margin-top: 3rem;
@@ -70,7 +98,7 @@
         justify-content: space-between;
         align-items: center;
         box-shadow: 1px 2px 3px #4bcfff8c;
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
         margin-bottom: 1rem;
         border-radius: .5rem;
         cursor: pointer;
@@ -78,14 +106,14 @@
         position: relative;
         z-index: 1;
         transition: all 0.3s;
-
         font-weight: bold;
+        line-height: .5rem;
     }
 
     .display li:hover::after {
-        transform: scaleX(1.1);
+        transform: scaleX(1.2);
         background-color: #4bcfff8c;
-        opacity: 0.2;
+        opacity: 0;
     }
 
     .display li::after {
