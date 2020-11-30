@@ -69,8 +69,8 @@ function getNumber() {
 }
 
 form.addEventListener('submit',(e)=>{
-e.preventDefault();
-
+e.preventDefault()
+let add = document.querySelector('.added-notif')
 let gender = document.querySelector('#gender')
 let dept = document.querySelector('input[name="dept"]')
 let name = document.querySelector('input[name="name"]')
@@ -80,8 +80,7 @@ if(name.value.length != 0 && dept.value.length !=0){
         dept:dept.value,
         gender:gender.value
     })
+ add.classList.add('add')
 }
 
-name.value = " "
-dept.value = " "
 })
